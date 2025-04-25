@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: trade-service
+  cloud:
+    nacos:
+      server-addr: 58.199.161.191
+      discovery:
+        server-addr: 58.199.161.191:8848
+      config:
+        file-extension: yaml
+        shared-configs: # 共享配置
+          - dataId: shared-jdbc.yaml # 共享mybatis配置
+          - dataId: shared-log.yaml # 共享日志配置
+          - dataId: shared-swagger.yaml # 共享日志配置
+          - dataId: shared-seata.yaml
+  profiles:
+    active: dev
