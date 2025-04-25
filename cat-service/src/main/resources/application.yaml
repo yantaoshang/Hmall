@@ -1,0 +1,26 @@
+server:
+  port: 8082
+hm:
+  db:
+    host: 58.199.162.70 # 修改为你自己的虚拟机IP地址
+    pw: 123 # 修改为docker中的MySQL密码
+    database: hm-cart
+  swagger:
+    title: 购物车服务接口文档
+    package: com.hmall.cart.controller
+    description: 购物车服务接口文档
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+      http-method-specify: true
+  rabbitmq:
+    host: 58.199.162.70 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: /hmall # 虚拟主机
+    username: hmall # 用户名
+    password: 123 # 密码
+feign:
+  sentinel:
+    enabled: true
